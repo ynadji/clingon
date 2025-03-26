@@ -781,11 +781,7 @@ _~~A() {
       (exit 130))
     ;; App-specific errors
     (base-error (condition)
-      (handle-error condition))
-    ;; Anything else
-    (error (condition)
-      (format *error-output* "~&~A~&" condition)
-      (exit 1))))
+      (handle-error condition))))
 
 (defmethod parse-command-line ((top-level command) arguments)
   "Parses the arguments for the given top-level command and
